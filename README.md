@@ -50,6 +50,10 @@
    });
    ```
 
+## Example
+
+<img src="https://user-images.githubusercontent.com/7195563/140964707-a1ec669f-30db-481e-8cec-2f8f973e865f.jpg" width="600px" />
+
 ## More Awesome Vite Plugins
 
 Can be found here: [Awesome Vite.js](https://github.com/vitejs/awesome-vite#readme)
