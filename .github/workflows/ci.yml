@@ -1,0 +1,105 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [12, 14, 16]
+      fail-fast: false
+
+    name: 'Build: node-${{ matrix.node_version }}, ${{ matrix.os }}'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6
+
+      - name: Set node version to ${{ matrix.node_version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node_version }}
+          cache: 'pnpm'
+
+      - name: Versions
+        run: |
+          echo "pnpm: $(pnpm --version)"
+          echo "npm : $(npm --version)"
+          echo "node: $(node --version)"
+          echo "process.versions:"
+          pnpm node -p process.versions
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+  lint:
+    runs-on: ubuntu-latest
+    name: 'Lint: node-16, ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6
+
+      - name: Set node version to 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
+      - name: Prepare
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm run lint
+
+  audit:
+    runs-on: ubuntu-latest
+    name: 'Audit: node-16, ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6
+
+      - name: Set node version to 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
+      - name: Prepare
+        run: pnpm install --frozen-lockfile
+
+      - name: Audit production
+        run: pnpm audit --prod
+
+      - name: Audit all
+        continue-on-error: true
+        run: pnpm audit
+
+      - name: Check outdated dependencies
+        continue-on-error: true
+        if: github.ref == 'refs/heads/main'
+        run: pnpm outdated --long
