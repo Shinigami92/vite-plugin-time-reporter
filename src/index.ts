@@ -27,9 +27,17 @@ export default (): Plugin => {
       // Catch potential render NPEs
       try {
         console.table({
-          build: { time: `${((buildEnd.getTime() - build.getTime()) / 1000).toFixed(3)}s` },
-          render: { time: `${((end.getTime() - render.getTime()) / 1000).toFixed(3)}s` },
-          full: { time: `${((end.getTime() - full.getTime()) / 1000).toFixed(3)}s` },
+          build: {
+            time: `${((buildEnd.getTime() - build.getTime()) / 1000).toFixed(
+              3,
+            )}s`,
+          },
+          render: {
+            time: `${((end.getTime() - render.getTime()) / 1000).toFixed(3)}s`,
+          },
+          full: {
+            time: `${((end.getTime() - full.getTime()) / 1000).toFixed(3)}s`,
+          },
         });
       } catch (error) {
         if (error instanceof Error) {
