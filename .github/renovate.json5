@@ -34,7 +34,7 @@
     {
       "groupName": "dependencies",
       "matchDepTypes": ["dependencies"],
-      "rangeStrategy": "bump"
+      "rangeStrategy": "replace"
     },
     {
       "groupName": "devDependencies",
