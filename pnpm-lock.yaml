@@ -13,7 +13,7 @@ specifiers:
   prettier-plugin-organize-imports: ~2.3.4
   rimraf: ~3.0.2
   typescript: ~4.6.2
-  vite: ~2.8.5
+  vite: ~2.8.6
 
 devDependencies:
   '@types/node': 16.11.26
@@ -28,7 +28,7 @@ devDependencies:
   prettier-plugin-organize-imports: 2.3.4_prettier@2.5.1+typescript@4.6.2
   rimraf: 3.0.2
   typescript: 4.6.2
-  vite: 2.8.5
+  vite: 2.8.6
 
 packages:
 
@@ -1447,8 +1447,8 @@ packages:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
     dev: true
 
-  /vite/2.8.5:
-    resolution: {integrity: sha512-C/7EGNa1ugWejol6nOcd/0d8PR70Nzd+XXwsPbnNOfzZw0NN2xyXfmw/GNDHgr5fcaTSO4gjxCJCrwNhQUMhmA==}
+  /vite/2.8.6:
+    resolution: {integrity: sha512-e4H0QpludOVKkmOsRyqQ7LTcMUDF3mcgyNU4lmi0B5JUbe0ZxeBBl8VoZ8Y6Rfn9eFKYtdXNPcYK97ZwH+K2ug==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
