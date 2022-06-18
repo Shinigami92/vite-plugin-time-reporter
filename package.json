@@ -37,19 +37,19 @@
     "prepublishOnly": "pnpm run clean && pnpm install && yarn run build"
   },
   "devDependencies": {
-    "@types/node": "~16.11.26",
+    "@types/node": "~16.11.41",
     "@typescript-eslint/eslint-plugin": "~5.13.0",
     "@typescript-eslint/parser": "~5.13.0",
-    "eslint": "~8.10.0",
-    "eslint-config-prettier": "~8.4.0",
-    "eslint-define-config": "~1.2.5",
+    "eslint": "~8.18.0",
+    "eslint-config-prettier": "~8.5.0",
+    "eslint-define-config": "~1.5.1",
     "eslint-gitignore": "~0.1.0",
     "eslint-plugin-prettier": "~4.0.0",
     "prettier": "2.5.1",
     "prettier-plugin-organize-imports": "~2.3.4",
     "rimraf": "~3.0.2",
     "typescript": "~4.6.2",
-    "vite": "~2.8.6"
+    "vite": "~2.9.12"
   },
   "peerDependencies": {
     "vite": "^2.0.0"
