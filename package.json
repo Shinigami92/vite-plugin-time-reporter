@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-time-reporter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Time reporting for Vite project",
   "main": "lib/index.js",
   "keywords": [
