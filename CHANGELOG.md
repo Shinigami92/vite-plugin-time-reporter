@@ -1,6 +1,14 @@
 # Next
 
-[diff](https://github.com/Shinigami92/vite-plugin-time-reporter/compare/1.0.0...main)
+[diff](https://github.com/Shinigami92/vite-plugin-time-reporter/compare/1.1.0...main)
+
+# 1.1.0
+
+[diff](https://github.com/Shinigami92/vite-plugin-time-reporter/compare/1.0.0...1.1.0)
+
+- Add support for Vite v3 ([#16])
+
+[#16]: https://github.com/Shinigami92/vite-plugin-time-reporter/issues/16
 
 # 1.0.0
 
