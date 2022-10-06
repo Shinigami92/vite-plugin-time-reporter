@@ -1,6 +1,6 @@
 import type { Plugin } from 'vite';
 
-export default (): Plugin => {
+export function timeReporter(): Plugin {
   const full: Date = new Date();
 
   let build: Date;
@@ -46,4 +46,6 @@ export default (): Plugin => {
       }
     },
   };
-};
+}
+
+export default timeReporter;

@@ -2,7 +2,19 @@
   "name": "vite-plugin-time-reporter",
   "version": "1.1.0",
   "description": "Time reporting for Vite project",
-  "main": "lib/index.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "keywords": [
     "vite",
     "vite-plugin",
@@ -24,14 +36,9 @@
   },
   "bugs": "https://github.com/Shinigami92/vite-plugin-time-reporter/issues",
   "license": "MIT",
-  "files": [
-    "lib",
-    "src",
-    "tsconfig.json"
-  ],
   "scripts": {
     "clean": "rimraf lib pnpm-lock.yaml node_modules",
-    "build": "tsc",
+    "build": "vite build",
     "format": "prettier --write .",
     "lint": "eslint .",
     "prepublishOnly": "pnpm run clean && pnpm install && yarn run build"
@@ -49,7 +56,8 @@
     "prettier-plugin-organize-imports": "~3.0.3",
     "rimraf": "~3.0.2",
     "typescript": "~4.7.4",
-    "vite": "~3.0.4"
+    "vite": "~3.1.5",
+    "vite-plugin-dts": "^1.6.4"
   },
   "peerDependencies": {
     "vite": "^2.0.0 || ^3.0.0"
