@@ -1,10 +1,18 @@
 {
-  "include": ["src"],
   "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "strict": true,
-    "lib": ["esnext", "dom"],
-    "jsx": "preserve",
-    "moduleResolution": "node",
-    "target": "esnext"
-  }
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "declaration": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "outDir": "lib",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
