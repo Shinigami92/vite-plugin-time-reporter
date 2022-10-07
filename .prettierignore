@@ -3,4 +3,4 @@
 .pnp.cjs
 pnpm-lock.yaml
 coverage/
-lib/
+dist/
