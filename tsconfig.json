@@ -10,7 +10,6 @@
     "declaration": true,
     "noImplicitOverride": true,
     "noUncheckedIndexedAccess": true,
-    "outDir": "lib",
     "rootDir": "src"
   },
   "include": ["src/**/*.ts"],
