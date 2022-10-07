@@ -41,7 +41,7 @@
     "build": "vite build",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "prepublishOnly": "pnpm run clean && pnpm install && yarn run build"
+    "prepublishOnly": "pnpm run clean && pnpm install && pnpm run build"
   },
   "devDependencies": {
     "@types/node": "~18.6.4",
