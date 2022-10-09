@@ -1,6 +1,14 @@
 # Next
 
-[diff](https://github.com/Shinigami92/vite-plugin-time-reporter/compare/1.1.0...main)
+[diff](https://github.com/Shinigami92/vite-plugin-time-reporter/compare/2.0.0...main)
+
+# 2.0.0
+
+[diff](https://github.com/Shinigami92/vite-plugin-time-reporter/compare/1.1.0...2.0.0)
+
+- Now serving ESM and CJS ([#20])
+
+[#20]: https://github.com/Shinigami92/vite-plugin-time-reporter/pull/20
 
 # 1.1.0
 
