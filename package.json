@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-time-reporter",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Time reporting for Vite project",
   "scripts": {
     "clean": "rimraf coverage dist pnpm-lock.yaml node_modules",
