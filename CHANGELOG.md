@@ -1,6 +1,14 @@
 # Next
 
-[diff](https://github.com/Shinigami92/vite-plugin-time-reporter/compare/2.0.0...main)
+[diff](https://github.com/Shinigami92/vite-plugin-time-reporter/compare/2.1.0...main)
+
+# 2.1.0
+
+[diff](https://github.com/Shinigami92/vite-plugin-time-reporter/compare/2.0.0...2.1.0)
+
+- Support Vite v4 ([#26])
+
+[#26]: https://github.com/Shinigami92/vite-plugin-time-reporter/pull/26
 
 # 2.0.0
 
