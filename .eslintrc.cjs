@@ -12,6 +12,7 @@ module.exports = defineConfig({
     es6: true,
     node: true,
   },
+  reportUnusedDisableDirectives: true,
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -20,7 +21,8 @@ module.exports = defineConfig({
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ['./tsconfig.lint.json'],
+    project: 'tsconfig.json',
+    sourceType: 'module',
     warnOnUnsupportedTypeScriptVersion: false,
   },
   plugins: ['@typescript-eslint', 'prettier'],
