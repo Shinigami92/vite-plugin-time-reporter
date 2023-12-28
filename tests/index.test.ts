@@ -1,5 +1,5 @@
 import type { Plugin } from 'vite';
-import type { SpyInstance } from 'vitest';
+import type { MockInstance } from 'vitest';
 import { describe, expect, it, vi } from 'vitest';
 import timeReporter from '../src';
 
@@ -29,27 +29,27 @@ describe('index', () => {
 
     const plugin: Plugin = timeReporter();
 
-    const spyConsoleTable: SpyInstance<
-      [tabularData: any, properties?: readonly string[] | undefined],
+    const spyConsoleTable: MockInstance<
+      [tabularData: any, properties?: ReadonlyArray<string> | undefined],
       void
     > = vi.spyOn(console, 'table');
 
-    // @ts-expect-error
+    // @ts-expect-error: Ignore invocation of a potential undefined object
     plugin.buildStart();
 
     vi.advanceTimersByTime(2010);
 
-    // @ts-expect-error
+    // @ts-expect-error: Ignore invocation of a potential undefined object
     plugin.buildEnd();
 
     vi.advanceTimersByTime(1030);
 
-    // @ts-expect-error
+    // @ts-expect-error: Ignore invocation of a potential undefined object
     plugin.renderStart();
 
     vi.advanceTimersByTime(3020);
 
-    // @ts-expect-error
+    // @ts-expect-error: Ignore invocation of a potential undefined object
     plugin.closeBundle();
 
     expect(spyConsoleTable).toBeCalledTimes(1);

@@ -2,6 +2,9 @@
 const { defineConfig } = require('eslint-define-config');
 const { readGitignoreFiles } = require('eslint-gitignore');
 
+/// <reference types="@eslint-types/prettier" />
+/// <reference types="@eslint-types/typescript-eslint" />
+
 module.exports = defineConfig({
   ignorePatterns: [
     ...readGitignoreFiles(),
@@ -33,30 +36,47 @@ module.exports = defineConfig({
     quotes: ['error', 'single', { avoidEscape: true }],
     semi: ['error', 'always'],
 
-    '@typescript-eslint/ban-ts-comment': 'off',
-    '@typescript-eslint/explicit-function-return-type': [
+    '@typescript-eslint/array-type': [
       'error',
-      { allowExpressions: true },
+      { default: 'array-simple', readonly: 'generic' },
     ],
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/member-ordering': 'off',
-    '@typescript-eslint/consistent-type-imports': [
+    '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/explicit-module-boundary-types': 'error',
+    '@typescript-eslint/naming-convention': [
       'error',
-      { prefer: 'type-imports' },
+      {
+        format: ['PascalCase'],
+        selector: ['class', 'interface', 'typeAlias', 'enumMember'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        format: ['PascalCase'],
+        selector: ['typeParameter'],
+        prefix: ['T'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
     ],
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-inferrable-types': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/no-parameter-properties': 'off',
-    '@typescript-eslint/no-unsafe-assignment': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
-    '@typescript-eslint/prefer-nullish-coalescing': 'warn',
-    '@typescript-eslint/prefer-optional-chain': 'warn',
-    '@typescript-eslint/prefer-readonly': ['warn'],
-    '@typescript-eslint/restrict-template-expressions': 'off',
-    '@typescript-eslint/typedef': [
-      'warn',
-      { memberVariableDeclaration: true, variableDeclaration: true },
+    '@typescript-eslint/no-inferrable-types': [
+      'error',
+      { ignoreParameters: true },
     ],
+    '@typescript-eslint/no-unsafe-argument': 'error',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-return': 'error',
+    '@typescript-eslint/padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: 'block-like', next: '*' },
+    ],
+    '@typescript-eslint/prefer-regexp-exec': 'error',
+    '@typescript-eslint/restrict-template-expressions': [
+      'error',
+      { allowNumber: true, allowBoolean: true },
+    ],
+    '@typescript-eslint/unbound-method': 'off',
   },
 });

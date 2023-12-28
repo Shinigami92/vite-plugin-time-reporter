@@ -1,4 +1,5 @@
 .github/ISSUE_TEMPLATE/
+.pnpm-store/
 .yarn/
 coverage/
 dist/
