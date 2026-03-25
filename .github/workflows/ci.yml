@@ -61,7 +61,7 @@ jobs:
       - name: Set node version to 20
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20.20.2
           cache: 'pnpm'
 
       - name: Prepare
@@ -88,7 +88,7 @@ jobs:
       - name: Set node version to 20
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20.20.2
           cache: 'pnpm'
 
       - name: Prepare
